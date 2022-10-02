@@ -12,13 +12,11 @@ namespace lenovoWarranty.function
     {
         static async Task<string> PostURI(Uri uri, HttpContent c)
         {
-            var response = string.Empty;
-            var content = string.Empty;
             var client = new HttpClient();
 
             var result = await client.PostAsync(uri, c);
 
-            content = result.Content.ReadAsStringAsync().Result;
+            var content = result.Content.ReadAsStringAsync().Result;
 
             return content;
         }
